@@ -23,6 +23,9 @@ backend/nbdist/
 backend/.nb-gradle/
 backend/build/
 
+# VS Code #
+.vscode
+
 # Apple # 
 .DS_Store
 
