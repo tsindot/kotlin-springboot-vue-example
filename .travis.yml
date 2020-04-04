@@ -20,6 +20,8 @@ before_install:
 script: 
   - mvn clean package
   - mvn com.google.cloud.tools:jib-maven-plugin:dockerBuild -pl backend
+
+after_success:
   - mvn jacoco:report
 
 # push image to ecr
