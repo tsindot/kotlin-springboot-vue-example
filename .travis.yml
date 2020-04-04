@@ -12,7 +12,7 @@ before_install:
 before_install:
   - sudo apt-get update
   - sudo apt-get install python3
-  - sudo adpt install python3-pip
+  - sudo apt-get install python3-pip
   - python3 --version
   - python --version
   - pip3 --version
