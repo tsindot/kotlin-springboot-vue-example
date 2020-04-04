@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  kotlin-spring-boot:
+    image:  io/radtech/kotlin-vue-demo:latest
+    environment:
+      JAVA_OPTS: -Dspring.profiles.active=prod
+    ports:
+      - "8080:8080"

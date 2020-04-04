@@ -1,6 +1,28 @@
+sudo: required
 language: java
 jdk: openjdk11
-script: mvn clean install jacoco:report
+services:
+- docker
+addons:
+  apt:
+    packages:
+    - python3
+    - python3-pip
+before_install:
+- pip3 install awscli --upgrade --user
+- export PATH=$PATH:$HOME/.local/bin
+
+script: 
+- mvn clean install jacoco:report
+- mvn package com.google.cloud.tools:jib-maven-plugin:dockerBuild -pl backend
+
+after_success:
+- mvn jacoco:report
+
+# push image to ecr
+# create fargate task, service, load balancer, certificate
+# run fargate
+
 cache:
   directories:
   - node_modules
