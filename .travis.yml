@@ -11,7 +11,8 @@ before_install:
   - which python
   - which pyenv
   - pyenv versions
-  - pyenv global 3.8
+  # pyenv global 3.8
+  - pyenv global 3.7.1
   - python -VV
   - pip -V
   - pip install --user awscli
